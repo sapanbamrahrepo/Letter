@@ -1,0 +1,15 @@
+
+    body
+        {
+            background: #acacac;
+            margin:0px;padding:0px;overflow:hidden;
+        }
+        #letter_div {
+            background:url(bg.jpg);
+            width:1366px;height:768px;margin:0px auto;
+            }
+        #letter_div canvas
+        {
+            width:1366px;
+            height:600px;
+        }

@@ -1,0 +1,48 @@
+<!doctype />
+<html>
+<head>
+    <title>Sapan Color</title>
+    <style>
+    h1{text-align:center;cursor:pointer;}
+    </style>
+</head>
+<body>
+<h1>Sapan Bamrah</h1>
+<h1>Sydney Weather</h1>
+<h1>Awesome View</h1>
+<h1>Color Options</h1>
+<h1>Working Demo</h1>
+
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+    var RGB = new Array();
+    $(document).ready(function () {
+        BindEvents();
+    });
+    function BindEvents() {
+        var colorCode='';
+        $('h1').each(function () {
+            $(this).bind('mouseenter mouseleave', function () {
+                SetColors($(this));
+            });
+            SetColors($(this));
+        });
+    }
+    function SetColors(obj) {
+        getColor();
+        colorCode = 'rgb(' + RGB[0] + ',' + RGB[1] + ',' + RGB[2] + ')';
+        $(obj).css({ 'color': colorCode });
+    }
+    function getColor() { 
+        var max= 255, min=1;
+        var Red = Math.ceil((Math.random() * (max - min)) + min);
+        var Green = Math.ceil((Math.random() * (max - min)) + min);
+        var Blue = Math.ceil((Math.random() * (max - min)) + min);
+        RGB[0] = Red;
+        RGB[1] = Green;
+        RGB[2] = Blue;
+
+    }
+</script>
+</body>
+</html>
